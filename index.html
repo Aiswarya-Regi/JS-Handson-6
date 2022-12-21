@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Handson 6</title>
+</head>
+<body>
+    <h1 style="color:red;text-decoration:underline;text-align:center;">PROBLEM SOLVING</h1>
+    <h3 style="color:blue;">Q:1)Find the Smaller Angle</h3>
+    <h3 style="color:blue;">PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.</h3>
+    <pre style="color:green;font-size:large;font-weight:bold">
+        var Minimal_Angle = (h, m) => 
+        {
+            let hour_angle=0.5*(h*60+m);
+            let minute_angle=6*m;
+            let angle=Math.abs(hour_angle - minute_angle);
+            angle=Math.min(360 - angle,angle)
+            return angle;
+        };
+ 
+    </pre>
+    <p style="color:blue">Input</p>
+    <p> 5 30</p>
+    <p style="color:blue">Output</p>
+    <p>15</p>
+    <h3 style="color:blue;">Q:2)Check whether the year is Leap year or not.</h3>
+    <h3 style="color:blue;">Write a program which takes an year  N as input from the user and find out whether the given year is a Leap Year or not.</h3>
+    <pre style="color:green;font-size:large;font-weight:bold">
+        var Check_Leap = (year) => 
+        {
+        if(year % 100 === 0 ? year % 400 === 0 : year % 4 === 0){
+             return "Leap Year";
+        }
+        else{
+            return "Non Leap Year"
+        }
+ 
+        };
+    </pre>
+    <p style="color:blue">Input</p>
+    <p>1900</p>
+    <p style="color:blue">Output</p>
+    <p>Non Leap Year</p>
+    <h3 style="color:blue;">Q:3)Perfect Number Check</h3>
+    <h3 style="color:blue;">Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.Now, You are given an integer  N,  a program to check whether the given number is a Perfect Number or not.</h3>
+    <pre style="color:green;font-size:large;font-weight:bold">
+        var Perfect_Check = (N) => 
+        {
+            var sum = 0;
+            for (var i = 1; i < N; i++) {
+                if (N % i === 0) {
+                    sum += i;
+                }
+            }
+            if (sum == N) {
+                return "YES";
+            }
+            else{
+                return "NO";
+            }
+        
+        };
+    </pre>
+    <p style="color:blue">Input</p>
+    <p>1</p>
+    <p style="color:blue">Output</p>
+    <p>YES</p>
+    <h3 style="color:blue;">Q:4)Reverse a Number</h3>
+    <h3 style="color:blue;">Write a program which takes a numebr N as input from the user and You need to reverse the number.</h3>
+    <pre style="color:green;font-size:large;font-weight:bold">
+        var Reverse_Number = (N) => 
+        {
+            N = N + "";
+	        return parseInt(N.split("").reverse().join(""));
+        };
+    </pre>
+    <p style="color:blue">Input</p>
+    <p>1900</p>
+    <p style="color:blue">Output</p>
+    <p>91</p>
+    <h3 style="color:blue;">Q:5)Substring Check</h3>
+    <h3 style="color:blue;">You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not.</h3>
+    <pre style="color:green;font-size:large;font-weight:bold">
+        var Substring_Check = (S1, S2) => 
+        {
+           if(S1.includes(S2)){
+                return "YES";
+            }
+            else{
+                return "NO";
+            }
+        };
+    </pre>
+    <p style="color:blue">Input</p>
+    <p>Hii this is Prepbuddy</p>
+    <p>Prepbuddy</p>
+    <p style="color:blue">Output</p>
+    <p>YES</p>
+</body>
+</html>
